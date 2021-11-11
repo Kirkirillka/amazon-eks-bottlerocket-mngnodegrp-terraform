@@ -10,7 +10,7 @@ locals {
 }
 
 data "template_file" "bottlerocket_config" {
-  template = file("${path.root}/templates/bottlerocket_config.toml.tpl")
+  template = file("${path.module}/templates/bottlerocket_config.toml.tpl")
   vars = {
     cluster_name                 = aws_eks_cluster.cluster.name
     cluster_endpoint             = aws_eks_cluster.cluster.endpoint
